@@ -1,14 +1,15 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Portfolio from "./pages/Portfolio";
-import SkillsPage from "./pages/SkillsPage";
-import ProjectsPage from "./pages/ProjectsPage";
-import FormationsPage from "./pages/FormationsPage";
-import ProfilePage from "./pages/ProfilePage";
-import { SidebarContextProvider } from "./context/SidebarContext";
+import { lazy, Suspense } from "react";
+
+const Portfolio = lazy(() => import("./pages/Portfolio"));
+const SkillsPage = lazy(() => import("./pages/SkillsPage"));
+const ProjectsPage = lazy(() => import("./pages/ProjectsPage"));
+const FormationsPage = lazy(() => import("./pages/FormationsPage"));
+const ProfilePage = lazy(() => import("./pages/ProfilePage"));
 
 function App() {
     return (
-        <SidebarContextProvider>
+        <Suspense fallback={<div>Loading...</div>}>
             <Router>
                 <Routes>
                     <Route path="/" exact element={<Portfolio />} />
@@ -21,7 +22,7 @@ function App() {
                     <Route path="/admin/profile" element={<ProfilePage />} />
                 </Routes>
             </Router>
-        </SidebarContextProvider>
+        </Suspense>
     );
 }
 
