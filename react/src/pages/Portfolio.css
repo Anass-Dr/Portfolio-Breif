@@ -3,3 +3,22 @@
 @import url("../assets/portfolio/css/plugins/swiper.min.css");
 @import url("../assets/portfolio/css/plugins/fancybox.min.css");
 @import url("../assets/portfolio/css/style.css");
+
+.art-menu-bar nav .main-menu .menu-item span {
+    padding: 7px 30px;
+    display: inline-block;
+    width: 100%;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    color: #8c8c8e;
+    -webkit-transition: 0.2s ease-in-out;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.art-menu-bar nav .main-menu .menu-item span.active {
+    color: #fafafc;
+    text-shadow: 0 0 3px rgba(250, 250, 252, 0.4);
+}
