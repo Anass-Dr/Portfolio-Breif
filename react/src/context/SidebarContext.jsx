@@ -7,7 +7,9 @@ export function SidebarContextProvider({ children }) {
 
     const handleNav = (indx) => setCurrNav(indx);
 
-    <SidebarContext.Provider value={{ currNav, handleNav }}>
-        {children}
-    </SidebarContext.Provider>;
+    return (
+        <SidebarContext.Provider value={{ currNav, handleNav }}>
+            {children}
+        </SidebarContext.Provider>
+    );
 }
